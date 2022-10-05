@@ -55,15 +55,24 @@ class Grid:
             else:
                 adjacent = 0
         # Vertical
-        for i in range(4):
-            if self.grid[i][column] == color:
+        adjacent = 0
+        for i in range(Grid.lines):
+            cell = self.grid[i][column]
+            if cell == color:
                 adjacent += 1
                 if adjacent == 4:
                     return True
             else:
                 adjacent = 0
 
-        # TODO: Diagonal
+        #diagonal
+        # adjacent = 0
+        # for i in range(Grid.lines):
+        #     for j in range(Grid.columns):
+        #         cell = self.grid[]
+
+
+
 
         return False
 
