@@ -25,6 +25,7 @@ class Grid:
         ret += " " + "".join(str(i) for i in range(self.columns)) + "\n"
         return ret
 
+#on retourne le nombre de la ligne ou on a posé le jeton
     def place(self, column: int, cell: Cell) -> int:
         for line in range(self.lines):
             if self.grid[line][column] == Cell.EMPTY:
@@ -43,8 +44,18 @@ class Grid:
                     return True
             else:
                 adjacent = 0
+        # Vertical
+        for i in range(line + 1):
+            if self.grid[i][column] == color:
+                adjacent += 1
+                if adjacent == 4:
+                    return True
+            else:
+                adjacent = 0
+
 
         # TODO: Vertical
+
         # TODO: Diagonal
         return False
 
@@ -87,3 +98,4 @@ class Game:
         column = player.play(self.grid)
         line = self.grid.place(column, cell)
         return self.grid.win(line, column)
+
