@@ -70,16 +70,18 @@ class Grid:
         # for i in range(Grid.lines):
         #     for j in range(Grid.columns):
         #         cell = self.grid[]
-
-
-
-
         return False
 
     def tie(self) -> bool:
         """Check if the grid is full."""
-        # TODO
-        return False
+        for i in range(Grid.lines):
+            for j in range(Grid.columns):
+                if self.grid[i][j] == Cell.EMPTY:
+                    return False
+        return True
+
+
+
 
 
 class Player:
