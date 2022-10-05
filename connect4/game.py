@@ -45,7 +45,7 @@ class Grid:
             else:
                 adjacent = 0
         # Vertical
-        for i in range(line + 1):
+        for i in range(4):
             if self.grid[i][column] == color:
                 adjacent += 1
                 if adjacent == 4:
@@ -53,10 +53,8 @@ class Grid:
             else:
                 adjacent = 0
 
-
-        # TODO: Vertical
-
         # TODO: Diagonal
+
         return False
 
     def tie(self) -> bool:
